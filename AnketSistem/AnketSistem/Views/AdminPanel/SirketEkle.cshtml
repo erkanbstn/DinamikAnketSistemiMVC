@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.TSirket
+@{
+    ViewBag.Title = "SirketEkle";
+}
+
+<h2>Sirket Ekle</h2>
+<hr />
+<form method="post">
+    <label>Şirket Adı</label>
+    <input type="text" class="form-control" name="SirketAd" placeholder="Şirket Adı Giriniz" />
+    <br />
+    <label>Müdür</label>
+    <input type="text" class="form-control" name="Mudur" placeholder="Müdür Bilgilerini Giriniz" />
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>

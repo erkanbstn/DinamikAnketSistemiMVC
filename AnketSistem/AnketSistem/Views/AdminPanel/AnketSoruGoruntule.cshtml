@@ -1,0 +1,35 @@
+﻿@model List<EntityLayer.Concrete.TSoru>
+@{
+    ViewBag.Title = "AnketSoruGoruntule";
+}
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>
+                Soru
+            </th>
+            <th>
+                Düzenle
+            </th>
+            <th>
+                Sil
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @item.SoruAd
+        </td>
+        <td>
+            <a class="btn btn-success" href="~/AdminPanel/SoruDuzenle/@item.SoruID">Düzenle</a>
+        </td>
+        <td>
+            <a class="btn btn-danger" href="~/AdminPanel/SoruSil/@item.SoruID">Sil</a>
+        </td>
+    </tr>
+        }
+    </tbody>
+</table>
+

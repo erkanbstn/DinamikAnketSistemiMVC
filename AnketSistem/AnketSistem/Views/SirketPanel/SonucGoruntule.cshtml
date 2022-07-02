@@ -1,0 +1,59 @@
+﻿@model List<EntityLayer.Concrete.TCevap>
+
+@{
+    ViewBag.Title = "SonucGoruntule";
+}
+<h1>Anket : @ViewBag.anketad</h1>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            Personel Şirket
+        </th>
+        <th>
+            Cevaplayan Personel
+        </th>
+        <th>
+            Cevaplanan Soru
+        </th>
+        <th>
+            Cevap
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.Soru.Anket.AnketID == ViewBag.anket)
+        {
+
+            if (item.Soru.Anket.SirketID == ViewBag.sirket)
+            {
+                <tr>
+                    <td>
+                        @item.Soru.Anket.Sirket.SirketAd
+                    </td>
+                    @if (item.Soru.Anket.AnketTip == "Kullanıcı Adı")
+                    {
+                        <td>
+                            @item.Personel.PersonelAd
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            Anonim
+                        </td>
+                    }
+                    <td>
+                        @item.Soru.SoruAd
+                    </td>
+                    <td>
+                        @item.CevapAd
+                    </td>
+                </tr>
+            }
+        }
+    }
+</table>
+
+
+

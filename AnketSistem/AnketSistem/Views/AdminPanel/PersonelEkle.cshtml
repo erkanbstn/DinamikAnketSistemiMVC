@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.TPersonel
+@{
+    ViewBag.Title = "PersonelEkle";
+}
+
+<h2>Personel Ekle</h2>
+<hr />
+<form method="post">
+    <label>Personel Adı</label>
+    <input type="text" class="form-control" name="PersonelAd" placeholder="Personel Adı Giriniz" />
+    <br />
+    <label>Şirket</label>
+    @Html.DropDownListFor(b => b.SirketID, (List<SelectListItem>)ViewBag.sirket, "Şirket Seçiniz", new { @class = "form-control", placeholder = "Şirket Seçiniz" })
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>

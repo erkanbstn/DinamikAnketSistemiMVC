@@ -1,0 +1,15 @@
+﻿@model EntityLayer.Concrete.TSoru
+@{
+    ViewBag.Title = "AnketSoruEkle";
+}
+
+<h2>Anket Soru Ekle</h2>
+<hr />
+<form method="post">
+    <input type="hidden" value="@ViewBag.anket" name="AnketID" />
+    <label>Soru Adı</label>
+    @Html.TextBoxFor(b => b.SoruAd, new { @class = "form-control", placeholder = "Soru Adı Giriniz" })
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>
+

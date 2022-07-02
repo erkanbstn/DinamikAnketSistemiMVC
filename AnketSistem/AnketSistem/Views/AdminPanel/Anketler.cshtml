@@ -1,0 +1,67 @@
+﻿@model List<EntityLayer.Concrete.TAnket>
+@{
+    ViewBag.Title = "Anketler";
+}
+
+
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>
+                Anket
+            </th>
+            <th>
+                Tip
+            </th>
+            <th>
+                Şirket
+            </th>
+            <th>
+                Soru Görüntüle
+            </th>
+            <th>
+                Soru Ekle
+            </th>
+            <th>
+                Sonuç Görüntüle
+            </th>
+            <th>
+                Düzenle
+            </th>
+            <th>
+                Sil
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @item.AnketAd
+        </td>
+        <td>
+            @item.AnketTip
+        </td>
+        <td>
+            @item.Sirket.SirketAd
+        </td>
+        <td>
+            <a class="btn btn-warning" href="~/AdminPanel/AnketSoruGoruntule/@item.AnketID">Soru Görüntüle</a>
+        </td>
+        <td>
+            <a class="btn btn-info" href="~/AdminPanel/AnketSoruEkle/@item.AnketID">Soru Ekle</a>
+        </td>
+        <td>
+            <a class="btn btn-white" href="~/AdminPanel/SonucGoruntule/@item.AnketID">Sonuç Görüntüle</a>
+        </td>
+        <td>
+            <a class="btn btn-success" href="~/AdminPanel/AnketDuzenle/@item.AnketID">Düzenle</a>
+        </td>
+        <td>
+            <a class="btn btn-danger" href="~/AdminPanel/AnketSil/@item.AnketID">Sil</a>
+        </td>
+    </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" href="~/AdminPanel/AnketEkle">Yeni Anket Ekle</a>

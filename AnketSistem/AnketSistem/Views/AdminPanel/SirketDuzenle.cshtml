@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.TSirket
+@{
+    ViewBag.Title = "SirketDuzenle";
+}
+
+<h2>Sirket Duzenle</h2>
+<hr />
+<form method="post">
+    @Html.HiddenFor(b => b.SirketID)
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(b => b.SirketAd, new { @class = "form-control", placholder = "Şirket Adı Giriniz" })
+    <br />
+    <label>Müdür</label>
+    @Html.TextBoxFor(b => b.Mudur, new { @class = "form-control", placholder = "Müdür Bilgilerini Giriniz" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(b => b.Sifre, new { @class = "form-control", placholder = "Müdür Bilgilerini Giriniz" })
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>

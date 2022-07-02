@@ -1,0 +1,44 @@
+﻿@model List<EntityLayer.Concrete.TPersonel>
+
+@{
+    ViewBag.Title = "Personeller";
+}
+
+
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>
+                Personel
+            </th>
+            <th>
+                Şirket
+            </th>
+            <th>
+                Düzenle
+            </th>
+            <th>
+                Sil
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.PersonelAd
+                </td>
+                <td>
+                    @item.Sirket.SirketAd
+                </td>
+                <td>
+                    <a class="btn btn-success" href="~/AdminPanel/PersonelDuzenle/@item.PersonelID">Düzenle</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="~/AdminPanel/PersonelSil/@item.PersonelID">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" href="~/AdminPanel/PersonelEkle">Yeni Personel Ekle</a>

@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.TAnket 
+@{
+    ViewBag.Title = "AnketDuzenle";
+}
+<h2>Anket Duzenle</h2>
+<hr />
+<form method="post">
+    @Html.HiddenFor(b => b.AnketID)
+    <label>Anket Adı</label>
+    @Html.TextBoxFor(b => b.AnketAd, new { @class = "form-control", placeholder = "Anket Adı Giriniz" })
+    <br />
+    <label>Anket Tip</label>
+    <br />
+    Kullanıcı Adı
+    @Html.RadioButtonFor(b => b.AnketTip, "Kullanıcı Adı")
+    Anonim
+    @Html.RadioButtonFor(b => b.AnketTip, "Anonim")
+    <br />
+    <input type="hidden" value="@ViewBag.sirketid" name="SirketID"/>
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>
+

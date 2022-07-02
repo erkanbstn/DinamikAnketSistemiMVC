@@ -1,0 +1,30 @@
+﻿@model List<EntityLayer.Concrete.TAnket>
+
+@{
+    ViewBag.Title = "Anketler";
+}
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>
+                Anket
+            </th>
+            <th>
+                Cevapla
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.AnketAd
+                </td>
+                <td>
+                    <a class="btn btn-info" href="~/PersonelPanel/AnketCevapla/@item.AnketID">Cevapla</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

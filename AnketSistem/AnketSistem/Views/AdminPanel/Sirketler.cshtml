@@ -1,0 +1,42 @@
+﻿@model List<EntityLayer.Concrete.TSirket>
+@{
+    ViewBag.Title = "Sirketler";
+}
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <th>
+                Şirket
+            </th>
+            <th>
+                Şirket Müdür
+            </th>
+            <th>
+                Düzenle
+            </th>
+            <th>
+                Sil
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.SirketAd
+                </td>
+                <td>
+                    @item.Mudur
+                </td>
+                <td>
+                    <a class="btn btn-success" href="~/AdminPanel/SirketDuzenle/@item.SirketID">Düzenle</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="~/AdminPanel/SirketSil/@item.SirketID">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" href="~/AdminPanel/SirketEkle">Yeni Şirket Ekle</a>
+

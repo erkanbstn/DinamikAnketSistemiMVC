@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.TPersonel
+
+@{
+    ViewBag.Title = "Profilim";
+}
+
+
+<h2>Profilim</h2>
+<hr />
+<form method="post">
+    @Html.HiddenFor(b => b.PersonelID)
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(b => b.PersonelAd, new { @class = "form-control", placeholder = "Personel Adı Giriniz" })
+    <br />
+    <input type="hidden" value="@Html.DisplayFor(b=>b.SirketID)" name="SirketID" />
+    <label>Şifre</label>
+    @Html.TextBoxFor(b => b.Sifre, new { @class = "form-control", placeholder = "Personel Şifre Giriniz" })
+    <br />
+    <input type="submit" class="btn btn-info" value="Değişiklikleri Kaydet" />
+</form>

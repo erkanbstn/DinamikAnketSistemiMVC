@@ -1,0 +1,33 @@
+﻿@model List<EntityLayer.Concrete.TSoru>
+@{
+    ViewBag.Title = "AnketCevapla";
+}
+
+<h2>Anket Adı : @ViewBag.anket</h2>
+<hr />
+<br />
+@{
+    int i = 1;
+}
+<form method="post">
+    @foreach (var item in Model)
+    {
+        <div>
+            @i) @item.SoruAd
+        </div>
+        <br />
+        <label>Cevabınız :</label>
+        <input type="text" class="form-control" name="cevap" />
+        <input type="hidden" value="@item.SoruID" class="form-control" name="soru" />
+        <hr />
+        <br />
+        i++;
+    }
+<span>*************************************************************************************************************************************************************************************************************************************</span>
+    <br />
+    <br />
+    Anket Yorumunuz :
+    <input type="text" class="form-control" name="YorumAd" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Cevapları Gönder" />
+</form>
